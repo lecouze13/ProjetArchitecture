@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { ServicesService } from '../services.service';
 
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 
@@ -32,24 +32,36 @@ export class LoginComponent {
 
   isLogin = false
 
-  hash: string;
+  // hash: string;
   data: any;
 
 
-  constructor(private http: HttpClient, private fb: FormBuilder,) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private services: ServicesService) {
     this.user_info_login = ""
     this.mdp_info_login = ""
     this.is_afficher_Login = false
-    this.hash = ""
+    // this.hash = ""
     this.angForm = this.fb.group({
 
       user: ['', [Validators.required, Validators.minLength(1)]],
       password: ['', Validators.required]
 
     });
-    localStorage.setItem('token', "ekjreiorjpo");
-  }
 
+  }
+  submit_login() {
+
+    this.services.login(this.user_info_login, this.mdp_info_login).subscribe(
+      (response) => {
+        // Traitement des données de réponse ici
+        console.log("Réponse de la requête :", response);
+      },
+      (error) => {
+        // Gestion des erreurs
+        console.error("Une erreur s'est produite :", error);
+      }
+    );
+  }
   ngOnInit() {
 
 
