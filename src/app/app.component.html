@@ -1,19 +1,17 @@
 <app-navbar></app-navbar>
 
-<!-- <app-login></app-login> -->
+<app-login></app-login>
 
 <main>
-    <div class="main_div" *ngIf="isLogin===false">
-        <!--  mettre a true pour afficher 
+    <app-container *ngIf="isLogin===false"></app-container>
+    <!--  mettre a true pour afficher 
         le main si l'user est connecter
     mettre a false en cas de phase de test -->
 
 
 
 
-        <input type="date" class="date-input1" [(ngModel)]="dateSelectionnee1">
-        <input type="date" class="date-input2" [(ngModel)]="dateSelectionnee2">
-        <button type="submit" class="btn btn-primary" (click)="submitForm()">Soumettre</button>
 
-    </div>
+
+
 </main>

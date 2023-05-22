@@ -1,0 +1,20 @@
+.main_div {
+    margin-top: 80px;
+    height: 2000px;
+    border: solid red 5px;
+}
+
+
+
+
+
+/* code pour choisir la date de ses conge */
+.date-input1,
+.date-input2 {
+    width: 30%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
