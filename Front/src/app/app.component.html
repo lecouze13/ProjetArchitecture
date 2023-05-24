@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 
-<app-login></app-login>
+<app-login *ngIf="isLogin===true"></app-login>
+
 
 <main>
     <app-container *ngIf="isLogin===false"></app-container>
@@ -8,7 +9,9 @@
         le main si l'user est connecter
     mettre a false en cas de phase de test -->
 
-
+    <h3 class="text_login" *ngIf="isLogin===true">Veuillez vous <b>connecter</b> pour profiter pleinement des
+        fonctionnalités de
+        l'application</h3>
 
 
 

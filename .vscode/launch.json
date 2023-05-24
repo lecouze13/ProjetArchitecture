@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GestionnairedecongesApplication<gestionnairedeconges>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.GestionnairedecongesApplication",
+            "projectName": "gestionnairedeconges",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

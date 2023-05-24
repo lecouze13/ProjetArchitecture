@@ -3,9 +3,25 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    text-align: center;
     padding: 10px;
     height: 80px;
     background-color: black;
     color: white;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    flex-grow: 1;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header button {
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
 }

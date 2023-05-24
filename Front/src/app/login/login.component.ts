@@ -13,68 +13,33 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 export class LoginComponent {
 
 
+  Boolean_loginRH: boolean;
+  Boolean_loginC: boolean;
+  is_afficher_Login: any;
+  constructor() {
+    this.Boolean_loginC = false;
+    this.Boolean_loginRH = false;
+    this.is_afficher_Login = false;
+  }
+  loginC() {
+    if (this.Boolean_loginRH == false) {
 
+    } else {
+      this.Boolean_loginRH = false
+    }
+    this.Boolean_loginC = true;
+  }
+  loginRH() {
+    if (this.Boolean_loginC == false) {
 
+    } else {
+      this.Boolean_loginC = false
+    }
+    this.Boolean_loginRH = true;
+  }
   close_login() {
     this.is_afficher_Login = true;
   }
-
-
-  @Input() is_afficher_Login: boolean;
-
-  @Input() user_info_login: string;
-  @Input() mdp_info_login: string;
-
-
-  @Output() dataEvent_isLogin = new EventEmitter<boolean>();
-
-  angForm: FormGroup;
-
-  isLogin = false
-
-  // hash: string;
-  data: any;
-
-
-  constructor(private http: HttpClient, private fb: FormBuilder, private services: ServicesService) {
-    this.user_info_login = ""
-    this.mdp_info_login = ""
-    this.is_afficher_Login = false
-    // this.hash = ""
-    this.angForm = this.fb.group({
-
-      user: ['', [Validators.required, Validators.minLength(1)]],
-      password: ['', Validators.required]
-
-    });
-
-  }
-  submit_login() {
-
-    this.services.login(this.user_info_login, this.mdp_info_login).subscribe(
-      (response) => {
-        // Traitement des données de réponse ici
-        console.log("Réponse de la requête :", response);
-      },
-      (error) => {
-        // Gestion des erreurs
-        console.error("Une erreur s'est produite :", error);
-      }
-    );
-  }
-  ngOnInit() {
-
-
-  }
-
-
-
-
-
-
-  get user() { return this.angForm.get('user'); }
-  get password() { return this.angForm.get('password'); }
-
 
 
 

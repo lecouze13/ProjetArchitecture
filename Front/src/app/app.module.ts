@@ -14,13 +14,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContainerComponent } from './container/container.component';
+import { LoginRHComponent } from './login-rh/login-rh.component';
+import { LoginCollaborateurComponent } from './login-collaborateur/login-collaborateur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    ContainerComponent
+    ContainerComponent,
+    LoginRHComponent,
+    LoginCollaborateurComponent
 
 
 
